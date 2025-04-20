@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="408.0" prefWidth="750.0" style="-fx-background-color(to bottom right, #141E30, #243B55);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.crud.HelloController">
+    <children>
+        <AnchorPane prefHeight="408.0" prefWidth="750.0" style="-fx-background-color: linear-gradient(to bottom right, #141E30, #243B55);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+            <children>      <AnchorPane layoutX="88.0" prefHeight="426.0" prefWidth="418.0">
+                <children>
+                    <Label fx:id="eventtxt" layoutX="26.0" layoutY="74.0" prefHeight="230.0" prefWidth="172.0" text="M" textFill="#141e30" textOverrun="LEADING_WORD_ELLIPSIS">
+                        <font>
+                            <Font name="Algerian" size="250.0" />
+                        </font>
+                    </Label>
+                    <Label fx:id="event2txt" layoutX="139.0" layoutY="288.0" text="atch" textFill="#225aa1">
+                        <font>
+                            <Font name="Algerian" size="55.0" />
+                        </font>
+                    </Label>
+                    <Label fx:id="motivatriontxt" layoutX="216.0" layoutY="402.0" text="We Create The Future..." textFill="#4488cc">
+                        <font>
+                            <Font name="Berlin Sans FB Bold" size="14.0" />
+                        </font>
+                    </Label>
+                    <Label fx:id="event1txt" layoutX="-70.0" layoutY="74.0" text="Event" textFill="#225aa1">
+                        <font>
+                            <Font name="Algerian" size="55.0" />
+                        </font>
+                    </Label>
+                    <ImageView fx:id="logos" fitHeight="180.0" fitWidth="270.0" focusTraversable="true" layoutX="-7.0" layoutY="106.0" opacity="0.38" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../../../../java/com/example/eventmatch_pr/Images/download__2_-removebg-preview.png" />
+                        </image>
+                    </ImageView>
+                </children></AnchorPane>
+            </children></AnchorPane>
+        <AnchorPane layoutX="402.0" prefHeight="408.0" prefWidth="348.0">
+            <children>
+                <TextField fx:id="emailtxt" layoutX="66.0" layoutY="174.0" prefHeight="35.0" prefWidth="232.0" promptText="Username" style="-fx-background-color:transparent;-fx-border-color:#2c6eb5;-fx-border-width:0 0 3 0;-fx-text-fill:white;-fx-prompt-text-fill:#7a9cc6;-fx-padding:0 0 5 0;" />
+
+                <PasswordField fx:id="passwordtxt" layoutX="66.0" layoutY="236.0" prefHeight="35.0" prefWidth="232.0" promptText="Password" style="-fx-background-color:transparent;-fx-border-color:#2c6eb5;-fx-border-width:0 0 3 0;-fx-text-fill:white;-fx-prompt-text-fill:#7a9cc6;-fx-padding:0 0 5 0;" />
+                <Button fx:id="loginBtn" layoutX="136.0" layoutY="308.0" mnemonicParsing="false" onAction="#getLogin" prefHeight="26.0" prefWidth="92.0" style="-fx-background-color:#2c6eb5 " text="Login">
+                    <font>
+                        <Font name="Berlin Sans FB" size="18.0" />
+                    </font>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Label fx:id="signtxt" layoutX="123.0" layoutY="105.0" text="Sign In" textFill="#225aa1">
+                    <font>
+                        <Font name="Berlin Sans FB" size="32.0" />
+                    </font>
+                </Label>
+                <FontAwesomeIcon fx:id="logo" fill="#4488cc" glyphName="USERS" layoutX="123.0" layoutY="93.0" size="7em" text="" wrappingWidth="117.65713024139404" />
+                <FontAwesomeIcon fill="#2c6eb5" glyphName="USER" layoutX="37.0" layoutY="200.0" size="2em" />
+                <FontAwesomeIcon fill="#2c6eb5" glyphName="LOCK" layoutX="40.0" layoutY="260.0" size="1.5em" />
+                <Hyperlink layoutX="120.0" layoutY="363.0" text="Create a new account?">
+                    <font>
+                        <Font name="Berlin Sans FB" size="12.0" />
+                    </font>
+                </Hyperlink>
+                <Button layoutX="307.0" layoutY="13.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" style="-fx-background-color:#2c6eb5 " />
+                <FontAwesomeIcon glyphName="CLOSE" />
+                <FontAwesomeIcon glyphName="CLOSE" layoutX="315.0" layoutY="31.0" text="" />
+                <Line endX="-6.0" endY="8.0" layoutY="2.0" startX="-6.0" startY="400.0" stroke="#4488cc" />
+            </children>
+        </AnchorPane>
+    </children>
+</Pane>

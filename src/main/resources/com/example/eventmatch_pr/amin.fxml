@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.crud.HelloController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Fichier">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Fermer" />
+                  <Menu mnemonicParsing="false" text="ouvrir">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#loadMedicament" text="Medecins" />
+                      <MenuItem mnemonicParsing="false" onAction="#loadConsultation" text="Consultations" />
+                    </items>
+                  </Menu>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Editer">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Supprimer" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Aider">
+            <items>
+              <MenuItem mnemonicParsing="false" text="A propos" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Version">
+              <items>
+                  <MenuItem mnemonicParsing="false" text="mise a jour" />
+                <MenuItem mnemonicParsing="false" text="Afficher" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to bottom right, #141E30, #243B55);" BorderPane.alignment="CENTER">
+           <Label fx:id="message" layoutX="123.0" layoutY="27.0" text="you are Welcome " textOverrun="CENTER_WORD_ELLIPSIS" underline="true" wrapText="true">
+              <font>
+                  <Font name="Algerian" size="40.0" />
+              </font>
+            <textFill>
+               <LinearGradient
+               >
+                  <stops>
+                     <Stop>
+                        <color>
+                           <Color red="0.13333334028720856" green="0.3529411852359772" blue="0.6313725709915161" />
+                        </color>
+                     </Stop>
+                     <Stop offset="1.0">
+                        <color>
+                           <Color red="1.0" green="1.0" blue="1.0" />
+                        </color>
+                     </Stop>
+                  </stops>
+               </LinearGradient>
+            </textFill>
+           </Label>
+         <Label layoutX="99.0" layoutY="91.0" text="Event" textFill="#225aa1">
+            <font>
+               <Font name="Algerian" size="50.0" />
+            </font>
+         </Label>
+         <Label layoutX="204.0" layoutY="103.0" text="M" textFill="WHITE">
+            <font>
+               <Font name="Algerian" size="150.0" />
+            </font></Label>
+         <Label layoutX="280.0" layoutY="230.0" text="ATCH" textFill="#225aa1">
+            <font>
+               <Font name="Algerian" size="50.0" />
+            </font></Label>
+       </AnchorPane>
+   </center>
+</BorderPane>

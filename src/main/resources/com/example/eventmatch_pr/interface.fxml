@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="700.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.crud.HelloController">
+   <children>
+      <BorderPane layoutX="114.0" layoutY="54.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="65.0" prefWidth="200.0" style="-fx-background-color: WHITE;" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane layoutX="102.0" layoutY="20.0" prefHeight="25.0" prefWidth="200.0" style="-fx-background-color: #032d4d;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Button fx:id="Exit" layoutX="698.0" layoutY="1.0" mnemonicParsing="false" onAction="#CloseInterface">
+                           <graphic>
+                              <FontAwesomeIcon fill="#13347c" glyphName="CLOSE" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </Pane>
+                  <HBox layoutX="239.0" layoutY="1.0" prefHeight="43.0" prefWidth="525.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+                     <children>
+                        <JFXButton prefHeight="38.0" prefWidth="136.0" styleClass="menuItem" text="Dashboard" textFill="#525454">
+                           <graphic>
+                              <FontAwesomeIcon fill="#13347c" glyphName="DASHBOARD" />
+                           </graphic>
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton onAction="#insertMedecin" prefHeight="38.0" prefWidth="136.0" styleClass="menuItem" text="ADD" textFill="#525454">
+                           <graphic>
+                              <FontAwesomeIcon fill="#13347c" glyphName="PLUS" text="" />
+                           </graphic>
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton onAction="#actualiserMedecin" prefHeight="38.0" prefWidth="136.0" styleClass="menuItem" text="Report" textFill="#525454">
+                           <graphic>
+                              <FontAwesomeIcon fill="#13347c" glyphName="MINUS" />
+                           </graphic>
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton prefHeight="38.0" prefWidth="136.0" styleClass="menuItem" text="EDIT" textFill="#525454">
+                           <graphic>
+                              <FontAwesomeIcon fill="#13347c" glyphName="EDIT" />
+                           </graphic>
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+                  <Button fx:id="Menu" layoutX="14.0" layoutY="33.0" mnemonicParsing="false" onAction="#OpenSlider" prefWidth="67.0" text="MENU">
+                     <graphic>
+                        <FontAwesomeIcon glyphName="LIST" wrappingWidth="12.0" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="MenuClose" layoutX="14.0" layoutY="33.0" mnemonicParsing="false" onAction="#CloseSlider" prefWidth="67.0" text="MENU" textFill="#85878a">
+                     <graphic>
+                        <FontAwesomeIcon fill="#13347c" glyphName="LIST" wrappingWidth="12.0" />
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </top>
+         <left>
+            <AnchorPane fx:id="slider" prefHeight="362.0" prefWidth="176.0" style="-fx-background-color: #0A4969;" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox layoutX="14.0" layoutY="35.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="53.0">
+                     <children>
+                        <JFXButton alignment="BASELINE_LEFT" prefHeight="38.0" prefWidth="176.0" styleClass="sidebarItem" text="Dashboard" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="DASHBOARD" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" prefHeight="38.0" prefWidth="176.0" styleClass="sidebarItem" text="ADD" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="PLUS" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" prefHeight="38.0" prefWidth="176.0" styleClass="sidebarItem" text="Report" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="EYE" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" prefHeight="38.0" prefWidth="176.0" styleClass="sidebarItem" text="BackUp" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="USER" />
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </left>
+         <right>
+            <TableView fx:id="MedecinTable" prefHeight="335.0" prefWidth="399.0" BorderPane.alignment="CENTER">
+               <columns>
+                  <TableColumn fx:id="idcolonne" prefWidth="100.199951171875" text="Identifiant" />
+                  <TableColumn fx:id="nomcolonne" prefWidth="97.4000244140625" text="Nom" />
+                  <TableColumn fx:id="prenomcolonne" prefWidth="94.5999755859375" text="Prenom" />
+                  <TableColumn fx:id="telcolonne" prefWidth="135.60003662109375" text="Télephone" />
+               </columns>
+            </TableView>
+         </right>
+         <center>
+            <AnchorPane prefHeight="335.0" prefWidth="142.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+               <children>
+                  <TextField fx:id="Prenomtxt" layoutY="143.0" promptText="Ajouter votre Prenom" />
+                  <TextField fx:id="Telephonetxt" layoutY="230.0" promptText="Ajouter Votre Telephone" />
+                  <TextField fx:id="Nomtxt" layoutY="47.0" promptText="Ajouter Votre Nom" />
+                  <Label layoutX="54.0" layoutY="23.0" text="Nom" textFill="#13347c" underline="true">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <Label layoutX="47.0" layoutY="122.0" text="Prenom" textFill="#13347c" underline="true">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+                  <Label layoutX="38.0" layoutY="209.0" text="Telephone" textFill="#13347c" underline="true">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font></Label>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
