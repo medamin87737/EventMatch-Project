@@ -4,21 +4,20 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="408.0" prefWidth="750.0" style="-fx-background-color(to bottom right, #141E30, #243B55);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.crud.HelloController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="408.0" prefWidth="750.0" style="-fx-background-color(to bottom right, #141E30, #243B55);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.eventmatch_pr.HelloController">
     <children>
         <AnchorPane prefHeight="408.0" prefWidth="750.0" style="-fx-background-color: linear-gradient(to bottom right, #141E30, #243B55);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
-            <children>      <AnchorPane layoutX="88.0" prefHeight="426.0" prefWidth="418.0">
+            <children>      <AnchorPane layoutX="88.0" prefHeight="426.0" prefWidth="281.0">
                 <children>
                     <Label fx:id="eventtxt" layoutX="26.0" layoutY="74.0" prefHeight="230.0" prefWidth="172.0" text="M" textFill="#141e30" textOverrun="LEADING_WORD_ELLIPSIS">
                         <font>
@@ -40,14 +39,33 @@
                             <Font name="Algerian" size="55.0" />
                         </font>
                     </Label>
-                    <ImageView fx:id="logos" fitHeight="180.0" fitWidth="270.0" focusTraversable="true" layoutX="-7.0" layoutY="106.0" opacity="0.38" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                            <Image url="@../../../../java/com/example/eventmatch_pr/Images/download__2_-removebg-preview.png" />
-                        </image>
-                    </ImageView>
+                  <AnchorPane fx:id="slider" layoutX="-70.0" layoutY="16.0" opacity="0.8" prefHeight="385.0" prefWidth="358.0" style="-fx-background-color: #243B55;">
+                     <children>
+                        <Button fx:id="signuptxt" layoutX="134.0" layoutY="348.0" mnemonicParsing="false" onAction="#getInscrit" prefHeight="18.0" prefWidth="71.0" text="Sign Up" textFill="#243b55">
+                           <font>
+                              <Font name="Berlin Sans FB" size="13.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="nameInscrit" layoutX="71.0" layoutY="37.0" prefHeight="26.0" prefWidth="198.0" promptText="               Your Name">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="prenomInscrit" layoutX="71.0" layoutY="88.0" prefHeight="26.0" prefWidth="198.0" promptText="         Your Family Name" />
+                        <TextField fx:id="emailInscrit" layoutX="71.0" layoutY="140.0" prefHeight="26.0" prefWidth="198.0" promptText="                Your Email" />
+                        <TextField fx:id="passwordInscrit" layoutX="71.0" layoutY="193.0" prefHeight="26.0" prefWidth="198.0" promptText="               Your Password" />
+                        <TextField fx:id="phoneInscrit" layoutX="67.0" layoutY="296.0" prefHeight="26.0" prefWidth="206.0" promptText="                 Your Phone" />
+                        <Label layoutX="66.0" layoutY="2.0" text="Create Your Own Account" textFill="#4488cc" underline="true">
+                           <font>
+                              <Font name="Berlin Sans FB Bold" size="17.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="comboRole" layoutX="87.0" layoutY="244.0" prefWidth="150.0" promptText="Your ROLE" />
+                     </children>
+                  </AnchorPane>
                 </children></AnchorPane>
             </children></AnchorPane>
-        <AnchorPane layoutX="402.0" prefHeight="408.0" prefWidth="348.0">
+        <AnchorPane fx:id="roletxt" layoutX="402.0" prefHeight="408.0" prefWidth="348.0">
             <children>
                 <TextField fx:id="emailtxt" layoutX="66.0" layoutY="174.0" prefHeight="35.0" prefWidth="232.0" promptText="Username" style="-fx-background-color:transparent;-fx-border-color:#2c6eb5;-fx-border-width:0 0 3 0;-fx-text-fill:white;-fx-prompt-text-fill:#7a9cc6;-fx-padding:0 0 5 0;" />
 
@@ -71,12 +89,12 @@
                 <FontAwesomeIcon fx:id="logo" fill="#4488cc" glyphName="USERS" layoutX="123.0" layoutY="93.0" size="7em" text="" wrappingWidth="117.65713024139404" />
                 <FontAwesomeIcon fill="#2c6eb5" glyphName="USER" layoutX="37.0" layoutY="200.0" size="2em" />
                 <FontAwesomeIcon fill="#2c6eb5" glyphName="LOCK" layoutX="40.0" layoutY="260.0" size="1.5em" />
-                <Hyperlink layoutX="120.0" layoutY="363.0" text="Create a new account?">
+                <Hyperlink fx:id="createtxt" layoutX="120.0" layoutY="363.0" onAction="#OpenSlider" text="Create a new account?">
                     <font>
                         <Font name="Berlin Sans FB" size="12.0" />
                     </font>
                 </Hyperlink>
-                <Button layoutX="307.0" layoutY="13.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" style="-fx-background-color:#2c6eb5 " />
+                <Button fx:id="Exit" layoutX="307.0" layoutY="13.0" mnemonicParsing="false" onAction="#CloseInterface" prefHeight="26.0" prefWidth="26.0" style="-fx-background-color:#2c6eb5 " />
                 <FontAwesomeIcon glyphName="CLOSE" />
                 <FontAwesomeIcon glyphName="CLOSE" layoutX="315.0" layoutY="31.0" text="" />
                 <Line endX="-6.0" endY="8.0" layoutY="2.0" startX="-6.0" startY="400.0" stroke="#4488cc" />

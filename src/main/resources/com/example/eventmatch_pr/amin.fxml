@@ -1,81 +1,174 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.crud.HelloController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.eventmatch_pr.HelloController">
+   <left>
+      <AnchorPane fx:id="bar" prefHeight="313.0" prefWidth="173.0" style="-fx-background-color: #243B55;" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton layoutX="8.0" layoutY="76.0" prefHeight="24.0" prefWidth="146.0" style="-fx-background-color: #F5F5F5;" text="EVENT" textFill="#243b55">
+               <font>
+                  <Font name="Cambria Bold Italic" size="15.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fill="#243b55" glyphName="ARROW_LEFT" />
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="8.0" layoutY="124.0" prefHeight="33.0" prefWidth="145.0" style="-fx-background-color: #F5F5F5;" text="PRESTATAIRE" textFill="#243b55">
+               <font>
+                  <Font name="Cambria Bold Italic" size="13.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fill="#243b55" glyphName="ARROW_RIGHT" />
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="8.0" layoutY="233.0" prefHeight="30.0" prefWidth="145.0" style="-fx-background-color: #F5F5F5;" text="AVIS" textFill="#243b55">
+               <font>
+                  <Font name="Cambria Bold Italic" size="15.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fill="#243b55" glyphName="STAR" />
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="8.0" layoutY="178.0" prefHeight="30.0" prefWidth="146.0" style="-fx-background-color: #F5F5F5;" text="RESERVATION" textFill="#243b55">
+               <font>
+                  <Font name="Cambria Bold Italic" size="12.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fill="#243b55" glyphName="CHECK" />
+               </graphic>
+            </JFXButton>
+            <Button fx:id="Profile" layoutX="14.0" layoutY="32.0" mnemonicParsing="false" onAction="#ProfileOpen" prefHeight="29.0" prefWidth="133.0" text="Profile" textFill="#243b55">
+               <font>
+                  <Font name="Cambria Bold Italic" size="16.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fill="#243b55" glyphName="USER" wrappingWidth="12.428571701049805" />
+               </graphic>
+            </Button>
+            <Button fx:id="ProfileClose" layoutX="14.0" layoutY="32.0" mnemonicParsing="false" onAction="#ProfileClose" prefHeight="29.0" prefWidth="133.0" text="Profile" textFill="#243b55">
+               <font>
+                  <Font name="Cambria Bold Italic" size="16.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fill="#243b55" glyphName="USER" wrappingWidth="12.428571701049805" />
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+   </left>
+   <bottom>
+      <AnchorPane prefHeight="44.0" prefWidth="600.0" style="-fx-background-color: #243B55;" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="WHITE" layoutX="26.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CONTATCT US : +21623456765">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </Text>
+            <Line endX="-42.5" endY="22.5" layoutX="216.0" layoutY="17.0" startX="-42.5" startY="-14.0" stroke="WHITE" />
+            <FontAwesomeIcon fill="WHITE" glyphName="FACEBOOK" layoutX="202.0" layoutY="26.0" />
+            <Text fill="WHITE" layoutX="215.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EVENT_Match_Team" />
+            <FontAwesomeIcon fill="WHITE" glyphName="INSTAGRAM" layoutX="345.0" layoutY="26.0" />
+            <Text fill="WHITE" layoutX="362.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EVENT_Match_Infinity" />
+            <FontAwesomeIcon fill="WHITE" glyphName="WHATSAPP" layoutX="497.0" layoutY="25.0" text="" />
+            <Text fill="WHITE" layoutX="514.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="23746575" />
+            <FontAwesomeIcon fill="WHITE" glyphName="PHONE" layoutX="9.0" layoutY="25.0" />
+            <Line endX="-42.5" endY="22.5" layoutX="375.0" layoutY="21.0" startX="-42.5" startY="-14.0" stroke="WHITE" />
+            <Line endX="-42.5" endY="22.5" layoutX="530.0" layoutY="21.0" startX="-42.5" startY="-14.0" stroke="WHITE" />
+         </children>
+      </AnchorPane>
+   </bottom>
    <top>
-      <MenuBar BorderPane.alignment="CENTER">
-        <menus>
-          <Menu mnemonicParsing="false" text="Fichier">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Fermer" />
-                  <Menu mnemonicParsing="false" text="ouvrir">
-                    <items>
-                        <MenuItem mnemonicParsing="false" onAction="#loadMedicament" text="Medecins" />
-                      <MenuItem mnemonicParsing="false" onAction="#loadConsultation" text="Consultations" />
-                    </items>
-                  </Menu>
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Editer">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Supprimer" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Aider">
-            <items>
-              <MenuItem mnemonicParsing="false" text="A propos" />
-            </items>
-          </Menu>
-            <Menu mnemonicParsing="false" text="Version">
-              <items>
-                  <MenuItem mnemonicParsing="false" text="mise a jour" />
-                <MenuItem mnemonicParsing="false" text="Afficher" />
-              </items>
-            </Menu>
-        </menus>
-      </MenuBar>
+      <AnchorPane prefHeight="36.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="8.0" layoutY="2.0" prefHeight="39.0" prefWidth="165.0" text="you are Welcome " textOverrun="CENTER_WORD_ELLIPSIS" underline="true" wrapText="true">
+               <font>
+                  <Font name="Algerian" size="18.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0" startX="0.8436018957345972">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.13333334028720856" green="0.3529411852359772" blue="0.6313725709915161" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <Line endY="27.0" layoutX="174.0" layoutY="12.0" startY="-12.0" />
+            <Line endX="427.0" endY="-1.0" layoutX="174.0" layoutY="42.0" startX="-1.0" startY="-1.0" />
+            <Line endX="585.2929077148438" endY="-6.0" layoutX="10.0" layoutY="6.0" startX="-10.0" startY="-6.0" />
+            <Button fx:id="sort" layoutX="551.0" layoutY="7.0" mnemonicParsing="false" onAction="#ClosePage" prefHeight="25.0" prefWidth="45.0">
+               <graphic>
+                  <FontAwesomeIcon fill="#da2e10" glyphName="CLOSE" />
+               </graphic>
+            </Button>
+            <Button fx:id="Menu" layoutX="216.0" layoutY="9.0" mnemonicParsing="false" onAction="#OpenMenu" prefHeight="25.0" prefWidth="115.0" text="Open Menu">
+               <graphic>
+                  <FontAwesomeIcon fill="#243b55" glyphName="BARS" />
+               </graphic>
+            </Button>
+            <Button fx:id="MenuClose" layoutX="370.0" layoutY="9.0" mnemonicParsing="false" onAction="#CloseMenu" prefHeight="25.0" prefWidth="104.0" text="Close Menu">
+               <graphic>
+                  <FontAwesomeIcon fill="#243b55" glyphName="BARS" />
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
    </top>
    <center>
-       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: linear-gradient(to bottom right, #141E30, #243B55);" BorderPane.alignment="CENTER">
-           <Label fx:id="message" layoutX="123.0" layoutY="27.0" text="you are Welcome " textOverrun="CENTER_WORD_ELLIPSIS" underline="true" wrapText="true">
-              <font>
-                  <Font name="Algerian" size="40.0" />
-              </font>
-            <textFill>
-               <LinearGradient
-               >
-                  <stops>
-                     <Stop>
-                        <color>
-                           <Color red="0.13333334028720856" green="0.3529411852359772" blue="0.6313725709915161" />
-                        </color>
-                     </Stop>
-                     <Stop offset="1.0">
-                        <color>
-                           <Color red="1.0" green="1.0" blue="1.0" />
-                        </color>
-                     </Stop>
-                  </stops>
-               </LinearGradient>
-            </textFill>
-           </Label>
-         <Label layoutX="99.0" layoutY="91.0" text="Event" textFill="#225aa1">
-            <font>
-               <Font name="Algerian" size="50.0" />
-            </font>
-         </Label>
-         <Label layoutX="204.0" layoutY="103.0" text="M" textFill="WHITE">
-            <font>
-               <Font name="Algerian" size="150.0" />
-            </font></Label>
-         <Label layoutX="280.0" layoutY="230.0" text="ATCH" textFill="#225aa1">
-            <font>
-               <Font name="Algerian" size="50.0" />
-            </font></Label>
-       </AnchorPane>
+      <AnchorPane fx:id="ProfileBar" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="biotxt" layoutX="74.0" layoutY="190.0" prefHeight="107.0" prefWidth="253.0" />
+            <TextField fx:id="postaltxt" layoutX="206.0" layoutY="98.0" />
+            <TextField fx:id="paystxt" layoutX="206.0" layoutY="49.0" />
+            <TextField fx:id="addresstxt" layoutX="14.0" layoutY="49.0" />
+            <TextField fx:id="villetxt" layoutX="14.0" layoutY="98.0" />
+            <Text layoutX="67.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ADRESS" />
+            <Text layoutX="74.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VILLE" />
+            <Text layoutX="253.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PAYS" />
+            <Text layoutX="239.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POSTAL_CODE" />
+            <DatePicker fx:id="pickerdate" layoutX="119.0" layoutY="144.0" />
+            <JFXButton layoutX="339.0" layoutY="269.0" onAction="#DeleteProfileAccount" prefHeight="28.0" prefWidth="72.0" style="-fx-background-color: ff1c07;" text="DELETE" textFill="WHITE">
+               <font>
+                  <Font name="Cambria Bold Italic" size="12.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="TIMES" />
+               </graphic>
+            </JFXButton>
+            <JFXButton layoutX="339.0" layoutY="229.0" onAction="#EditProfileAccount" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: #228af2;" text="EDIT" textFill="WHITE">
+               <font>
+                  <Font name="Cambria Bold Italic" size="15.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="EDIT" />
+               </graphic>
+            </JFXButton>
+            <Text layoutX="32.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BIO" />
+            <Text layoutX="26.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DATE OF BIRTH" />
+            <JFXButton layoutX="339.0" layoutY="190.0" onAction="#AddProfileAccount" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: #32d34d;" text="ADD" textFill="WHITE">
+               <font>
+                  <Font name="Cambria Bold Italic" size="15.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIcon fill="WHITE" glyphName="PLUS" />
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
    </center>
 </BorderPane>
