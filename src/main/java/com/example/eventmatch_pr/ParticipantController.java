@@ -24,7 +24,6 @@ public class ParticipantController {
     @FXML private TextField searchField;
     @FXML private ComboBox<String> searchTypeField;
     @FXML private TableView<Participant> participantTable;
-    @FXML private TableColumn<Participant, Integer> idColumn;
     @FXML private TableColumn<Participant, String> nomColumn;
     @FXML private TableColumn<Participant, String> prenomColumn;
     @FXML private TableColumn<Participant, String> emailColumn;
@@ -53,7 +52,6 @@ public class ParticipantController {
     }
 
     private void setupTable() {
-        idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         nomColumn.setCellValueFactory(new PropertyValueFactory<>("nom"));
         prenomColumn.setCellValueFactory(new PropertyValueFactory<>("prenom"));
         emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
