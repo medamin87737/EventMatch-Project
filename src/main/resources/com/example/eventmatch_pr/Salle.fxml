@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox spacing="10" style="-fx-padding: 15; -fx-background-color: #2a2a2a;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.eventmatch_pr.SalleController">
+
+    <!-- Titre de l'application -->
+    <Text fill="#40cce1" style="-fx-font-size: 32px; -fx-font-family: 'Arial'; -fx-font-weight: bold; -fx-text-fill: #4a90e2; -fx-padding: 10; -fx-alignment: center;" text="EventMatch" />
+
+    <Button onAction="#viewuser" style="-fx-font-size: 14px; -fx-text-fill: #e0e0e0; -fx-background-color: red;" text="← Retour" textFill="#dfdcdc" />
+
+    <HBox alignment="CENTER" spacing="10">
+        <TextField fx:id="searchField" promptText="Rechercher..." style="-fx-background-color: #333; -fx-text-fill: white;" />
+        <Button onAction="#ajouterSalle" style="-fx-base: #4a6baf; -fx-text-fill: white;" text="Ajouter" />
+        <Button onAction="#modifierSalle" style="-fx-base: #5a7bbf; -fx-text-fill: white;" text="Modifier" />
+        <Button onAction="#supprimerSalle" style="-fx-base: #af4a4a; -fx-text-fill: white;" text="Supprimer" />
+        <Button onAction="#exporterExcel" style="-fx-base: #4aaf6b; -fx-text-fill: white;" text="Exporter Excel" />
+    </HBox>
+
+    <TableView fx:id="tableSalles" prefHeight="161.0" prefWidth="962.0"
+               style="-fx-background-color: white;" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colNom" text="Nom" />
+            <TableColumn fx:id="colCapacite" text="Capacité" />
+            <TableColumn fx:id="colType" text="Type" />
+            <TableColumn fx:id="colDisponible" text="Disponible" />
+            <TableColumn fx:id="colDescription" text="Description" />
+            <TableColumn fx:id="colAdresse" text="Adresse" />
+            <TableColumn fx:id="colVille" text="Ville" />
+            <TableColumn fx:id="colPrixParHeure" text="Prix par heure" />
+            <TableColumn fx:id="colEquipements" text="Équipements" />
+            <TableColumn fx:id="colCreatedAt" text="Créé à" />
+            <TableColumn fx:id="colUpdatedAt" text="Mis à jour" />
+            <TableColumn fx:id="colEstDisponible" text="Est Disponible" />
+        </columns>
+    </TableView>
+</VBox>

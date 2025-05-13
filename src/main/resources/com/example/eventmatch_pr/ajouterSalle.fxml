@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox spacing="10" style="-fx-padding: 15; -fx-background-color: #2a2a2a;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.eventmatch_pr.AjouterSalleController">
+
+    <Text fill="#40cce1" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Ajouter une nouvelle salle" />
+
+    <GridPane hgap="10" vgap="10">
+        <Label text="Nom:" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-text-fill: white;" />
+        <TextField fx:id="nomField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+        <Label text="Capacité:" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-text-fill: white;" />
+        <TextField fx:id="capaciteField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <Label text="Type:" GridPane.columnIndex="0" GridPane.rowIndex="2" style="-fx-text-fill: white;" />
+        <TextField fx:id="typeField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+        <Label text="Disponible:" GridPane.columnIndex="0" GridPane.rowIndex="3" style="-fx-text-fill: white;" />
+        <CheckBox fx:id="disponibleCheck" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+        <Label text="Description:" GridPane.columnIndex="0" GridPane.rowIndex="4" style="-fx-text-fill: white;" />
+        <TextArea fx:id="descriptionArea" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+        <Label text="Adresse:" GridPane.columnIndex="0" GridPane.rowIndex="5" style="-fx-text-fill: white;" />
+        <TextField fx:id="adresseField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+        <Label text="Ville:" GridPane.columnIndex="0" GridPane.rowIndex="6" style="-fx-text-fill: white;" />
+        <TextField fx:id="villeField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+        <Label text="Prix par heure:" GridPane.columnIndex="0" GridPane.rowIndex="7" style="-fx-text-fill: white;" />
+        <TextField fx:id="prixField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+
+        <Label text="Équipements:" GridPane.columnIndex="0" GridPane.rowIndex="8" style="-fx-text-fill: white;" />
+        <TextArea fx:id="equipementsArea" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+
+        <Label text="Est disponible:" GridPane.columnIndex="0" GridPane.rowIndex="9" style="-fx-text-fill: white;" />
+        <CheckBox fx:id="estDisponibleCheck" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+    </GridPane>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button onAction="#handleAjouter" style="-fx-base: #4a6baf; -fx-text-fill: white;" text="Ajouter" />
+        <Button onAction="#handleAnnuler" style="-fx-base: #af4a4a; -fx-text-fill: white;" text="Annuler" />
+    </HBox>
+</VBox>

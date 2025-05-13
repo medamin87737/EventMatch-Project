@@ -7,7 +7,7 @@ import java.sql.*;
 
 public class DB {
     // Database credentials and URL (change these to match your database configuration)
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/user";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/projet";
     private static final String USER = "root";
     private static final String PASSWORD = "";
     public ResultSet executeUpdate;

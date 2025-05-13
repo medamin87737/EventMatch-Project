@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15" style="-fx-padding: 20; -fx-background-color: #f5f7fa;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.eventmatch_pr.ReservationSalleController">
+    <HBox alignment="CENTER" prefHeight="25.0" prefWidth="548.0" spacing="10">
+        <Button onAction="#handleAddReservation" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-min-width: 100;" text="Ajouter" />
+        <Button onAction="#handleUpdateReservation" style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-min-width: 100;" text="Modifier" />
+        <Button onAction="#handleDeleteReservation" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-min-width: 100;" text="Supprimer" />
+        <Button onAction="#handleClearForm" style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-min-width: 100;" text="Vider" />
+        <Button  style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-min-width: 100;" text="Exporter Excel" />
+    </HBox>
+
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <ComboBox fx:id="cbSearchAttribute" style="-fx-pref-width: 150;" />
+        <TextField fx:id="txtSearch" promptText="Rechercher..." style="-fx-pref-width: 300;" />
+        <Button onAction="#handleSearch" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Rechercher" />
+    </HBox>
+
+    <Label prefHeight="30.0" prefWidth="234.0" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Gestion des Réservations de Salle" />
+
+    <TableView fx:id="tableReservations" prefHeight="484.0" prefWidth="672.0" style="-fx-background-color: white;">
+        <columns>
+            <TableColumn fx:id="colSalle" minWidth="120" text="Salle" />
+            <TableColumn fx:id="colDateDebut" minWidth="150" text="Date Début" />
+            <TableColumn fx:id="colDateFin" minWidth="150" text="Date Fin" />
+            <TableColumn fx:id="colStatut" minWidth="100" text="Statut" />
+            <TableColumn fx:id="colParticipants" minWidth="80" text="Participants" />
+            <TableColumn fx:id="colStatutPaiement" minWidth="100" text="Statut Paiement" />
+        </columns>
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+        </columnResizePolicy>
+    </TableView>
+</VBox>

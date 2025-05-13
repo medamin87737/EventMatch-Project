@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="15" style="-fx-padding: 20;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.eventmatch_pr.AddReservationController">
+    <!-- Titre -->
+    <Label text="Ajouter une nouvelle réservation" style="-fx-font-size: 16px; -fx-font-weight: bold;">
+        <font>
+            <Font name="System Bold" size="16.0" />
+        </font>
+    </Label>
+
+    <!-- Formulaire -->
+    <GridPane hgap="15" vgap="15" style="-fx-padding: 10;">
+        <padding><Insets top="10" right="15" bottom="10" left="15"/></padding>
+
+        <!-- Ligne 0: Sélection de la salle -->
+        <Label text="Salle:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <ComboBox fx:id="cbSalle" GridPane.columnIndex="1" GridPane.rowIndex="0" GridPane.columnSpan="3"
+                  prefWidth="250" />
+
+        <!-- Ligne 1: ID Utilisateur -->
+        <Label text="ID Utilisateur:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="txtUserId" GridPane.columnIndex="1" GridPane.rowIndex="1"
+                   promptText="Entrez l'ID utilisateur" />
+
+        <!-- Ligne 2: Date et heure de début -->
+        <Label text="Date Début:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <DatePicker fx:id="dpDateDebut" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <Label text="Heure Début:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+        <ComboBox fx:id="cbHeureDebut" GridPane.columnIndex="3" GridPane.rowIndex="2"
+                  prefWidth="100" />
+
+        <!-- Ligne 3: Date et heure de fin -->
+        <Label text="Date Fin:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <DatePicker fx:id="dpDateFin" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        <Label text="Heure Fin:" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+        <ComboBox fx:id="cbHeureFin" GridPane.columnIndex="3" GridPane.rowIndex="3"
+                  prefWidth="100" />
+
+        <!-- Ligne 4: Nombre de participants -->
+        <Label text="Nombre Participants:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <TextField fx:id="txtParticipants" GridPane.columnIndex="1" GridPane.rowIndex="4"
+                   promptText="Nombre" />
+
+        <!-- Ligne 5: Statut -->
+        <Label text="Statut:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+        <ComboBox fx:id="cbStatut" GridPane.columnIndex="1" GridPane.rowIndex="5"
+                  prefWidth="150" />
+
+        <!-- Ligne 6: Statut de paiement -->
+        <Label text="Statut Paiement:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+        <ComboBox fx:id="cbStatutPaiement" GridPane.columnIndex="1" GridPane.rowIndex="6"
+                  prefWidth="150" />
+
+        <!-- Ligne 7: Motif -->
+        <Label text="Motif:" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+        <TextField fx:id="txtMotif" GridPane.columnIndex="1" GridPane.rowIndex="7" GridPane.columnSpan="3"
+                   promptText="Raison de la réservation" />
+
+        <!-- Ligne 8: Commentaires -->
+        <Label text="Commentaires:" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+        <TextArea fx:id="taCommentaires" GridPane.columnIndex="1" GridPane.rowIndex="8" GridPane.columnSpan="3"
+                  prefRowCount="4" wrapText="true" promptText="Notes supplémentaires..." />
+    </GridPane>
+
+    <!-- Boutons -->
+    <HBox spacing="15" alignment="CENTER_RIGHT" style="-fx-padding: 10 15 10 15;">
+        <Button text="Annuler" onAction="#handleCancel"
+                style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-min-width: 100; -fx-font-weight: bold;" />
+        <Button text="Enregistrer" onAction="#handleSave"
+                style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-min-width: 100; -fx-font-weight: bold;" />
+    </HBox>
+</VBox>

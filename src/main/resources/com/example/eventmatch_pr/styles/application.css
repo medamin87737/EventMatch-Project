@@ -1,0 +1,48 @@
+.root {
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-font-size: 14px;
+}
+
+.table-view {
+    -fx-background-color: white;
+    -fx-table-cell-border-color: transparent;
+}
+
+.table-view .column-header {
+    -fx-background-color: #3f51b5;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #f9f9f9;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #e3f2fd;
+}
+
+.button {
+    -fx-background-radius: 4;
+    -fx-padding: 6 12 6 12;
+    -fx-font-weight: bold;
+}
+
+.edit-button {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+}
+
+.delete-button {
+    -fx-background-color: #f44336;
+    -fx-text-fill: white;
+}
+
+.dialog-pane {
+    -fx-pref-width: 600px;
+}
+
+.text-field, .text-area, .date-picker, .combo-box {
+    -fx-font-size: 14px;
+    -fx-background-radius: 4;
+}

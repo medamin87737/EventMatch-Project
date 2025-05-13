@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.eventmatch_pr.EditController"
+      spacing="10"
+      style="-fx-background-color: #f5f5f5;">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Gestion des Activités" 
+           style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+    <GridPane vgap="15" hgap="15" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 5;">
+        <!-- Nom -->
+        <Label text="Nom:" GridPane.columnIndex="0" GridPane.rowIndex="0" 
+               style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+        <TextField fx:id="nomField" GridPane.columnIndex="1" GridPane.rowIndex="0" GridPane.columnSpan="3"
+                  style="-fx-background-radius: 3;"/>
+
+        <!-- Description -->
+        <Label text="Description:" GridPane.columnIndex="0" GridPane.rowIndex="1"
+               style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+        <TextArea fx:id="descriptionField" GridPane.columnIndex="1" GridPane.rowIndex="1" 
+                 GridPane.columnSpan="3" prefRowCount="3"
+                 style="-fx-background-radius: 3;"/>
+
+        <!-- Date et heure de début -->
+        <Label text="Début:" GridPane.columnIndex="0" GridPane.rowIndex="2"
+               style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+        <HBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <DatePicker fx:id="debutDatePicker" style="-fx-background-radius: 3;"/>
+            <ComboBox fx:id="debutHourCombo" prefWidth="100" style="-fx-background-radius: 3;"/>
+        </HBox>
+
+        <!-- Date et heure de fin -->
+        <Label text="Fin:" GridPane.columnIndex="2" GridPane.rowIndex="2"
+               style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+        <HBox spacing="5" GridPane.columnIndex="3" GridPane.rowIndex="2">
+            <DatePicker fx:id="finDatePicker" style="-fx-background-radius: 3;"/>
+            <ComboBox fx:id="finHourCombo" prefWidth="100" style="-fx-background-radius: 3;"/>
+        </HBox>
+
+        <!-- Lieu -->
+        <Label text="Lieu:" GridPane.columnIndex="0" GridPane.rowIndex="3"
+               style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+        <TextField fx:id="lieuField" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.columnSpan="3"
+                  style="-fx-background-radius: 3;"/>
+
+        <!-- Responsable -->
+        <Label text="Responsable:" GridPane.columnIndex="0" GridPane.rowIndex="4"
+               style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+        <TextField fx:id="responsableField" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.columnSpan="3"
+                  style="-fx-background-radius: 3;"/>
+
+        <!-- Type -->
+        <Label text="Type:" GridPane.columnIndex="0" GridPane.rowIndex="5"
+               style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+        <ComboBox fx:id="typeCombo" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.columnSpan="3"
+                 style="-fx-background-radius: 3;"/>
+
+        <!-- Statut -->
+        <Label text="Statut:" GridPane.columnIndex="0" GridPane.rowIndex="6"
+               style="-fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+        <ComboBox fx:id="statutCombo" GridPane.columnIndex="1" GridPane.rowIndex="6" GridPane.columnSpan="3"
+                 style="-fx-background-radius: 3;"/>
+    </GridPane>
+
+    <!-- Messages d'erreur et validation -->
+    <Label fx:id="errorLabel" styleClass="error-label"/>
+    <Label fx:id="validationLabel" styleClass="validation-label"/>
+
+    <!-- Boutons -->
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Annuler" onAction="#handleAnnuler" 
+                style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 3;"/>
+        <Button text="Valider" onAction="#handleValider"
+                style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-background-radius: 3;"/>
+    </HBox>
+</VBox>

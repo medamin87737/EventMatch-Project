@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane fitToHeight="true" fitToWidth="true" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.eventmatch_pr.ParticipantController">
+    <VBox spacing="10" style="-fx-background-color: linear-gradient(to bottom, #F5F5F5, #E0E0E0);">
+        <padding>
+            <Insets bottom="20" left="20" right="20" top="20" />
+        </padding>
+
+        <!-- En-tête -->
+        <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-background-color: linear-gradient(to right, #2C3E50, #3498DB); -fx-padding: 15; -fx-background-radius: 5;">
+            <Label style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: white;" text="Gestion des Participants" />
+            <Pane HBox.hgrow="ALWAYS" />
+            <Label style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: white; -fx-effect: dropshadow(gaussian, #00000055, 2, 0, 0, 2); -fx-padding: 0 10 0 0;" text="EventMatch" />
+        </HBox>
+
+        <!-- SplitPane pour diviser l'interface -->
+        <SplitPane dividerPositions="0.3" VBox.vgrow="ALWAYS">
+            <!-- Panneau de gauche (Formulaire) -->
+            <VBox spacing="10" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 0);">
+                <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-padding: 0 0 10 0;" text="Formulaire" />
+                
+                <!-- Formulaire d'ajout/modification -->
+                <GridPane hgap="10" vgap="10">
+                    <Label text="Nom:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <TextField fx:id="nomField" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                    
+                    <Label text="Prénom:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <TextField fx:id="prenomField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    
+                    <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    
+                    <Label text="Téléphone:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                    <TextField fx:id="telephoneField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                    
+                    <Label text="Date d'inscription:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                    <DatePicker fx:id="dateInscriptionField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                    
+                    <Label text="Statut:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                    <ComboBox fx:id="statutField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                    
+                    <Label text="Badge ID:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                    <TextField fx:id="badgeIdField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                    
+                    <Label text="Activité:" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                    <ComboBox fx:id="activiteField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+               <columnConstraints>
+                  <ColumnConstraints />
+                  <ColumnConstraints />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+               </rowConstraints>
+                </GridPane>
+
+                <!-- Boutons d'action -->
+                <HBox alignment="CENTER" spacing="10" style="-fx-padding: 20 0 0 0;">
+                    <Button onAction="#handleAjouter" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4px; -fx-cursor: hand;">
+                        <text>➕ Ajouter</text>
+                    </Button>
+                    <Button onAction="#handleModifier" style="-fx-background-color: #FF9800; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4px; -fx-cursor: hand;">
+                        <text>✏️ Modifier</text>
+                    </Button>
+                    <Button onAction="#handleSupprimer" style="-fx-background-color: #F44336; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4px; -fx-cursor: hand;">
+                        <text>🗑️ Supprimer</text>
+                    </Button>
+                </HBox>
+            </VBox>
+
+            <!-- Panneau de droite (Tableau et recherche) -->
+            <VBox spacing="10">
+                <!-- Barre de recherche -->
+                <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-background-color: white; -fx-padding: 10; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 0);">
+                    <Label styleClass="label" text="Rechercher:" />
+                    <ComboBox fx:id="searchTypeField" prefWidth="150" />
+                    <TextField fx:id="searchField" prefWidth="200" promptText="Entrez votre recherche..." />
+                    <Button onAction="#handleRechercher" style="-fx-background-color: #9C27B0; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4px; -fx-cursor: hand;" text="🔍" />
+                    <Button onAction="#handleReinitialiser" style="-fx-background-color: #607D8B; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 4px; -fx-cursor: hand;" text="↩️" />
+                </HBox>
+
+                <!-- TableView des participants -->
+                <TableView fx:id="participantTable" style="-fx-background-color: white; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 0);" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="nomColumn" prefWidth="100" text="Nom" />
+                        <TableColumn fx:id="prenomColumn" prefWidth="100" text="Prénom" />
+                        <TableColumn fx:id="emailColumn" prefWidth="150" text="Email" />
+                        <TableColumn fx:id="telephoneColumn" prefWidth="100" text="Téléphone" />
+                        <TableColumn fx:id="dateInscriptionColumn" prefWidth="120" text="Date d'inscription" />
+                        <TableColumn fx:id="statutColumn" prefWidth="80" text="Statut" />
+                        <TableColumn fx:id="badgeIdColumn" prefWidth="80" text="Badge ID" />
+                        <TableColumn fx:id="activiteColumn" prefWidth="100" text="Activité" />
+                    </columns>
+                </TableView>
+            </VBox>
+        </SplitPane>
+
+        <!-- Barre de statut -->
+        <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-background-color: linear-gradient(to right, #2C3E50, #3498DB); -fx-padding: 10; -fx-background-radius: 5;">
+            <Label fx:id="statusLabel" style="-fx-text-fill: white; -fx-font-weight: bold;" text="Prêt" />
+        </HBox>
+    </VBox>
+</ScrollPane>
