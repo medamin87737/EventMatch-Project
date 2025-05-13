@@ -1,13 +1,10 @@
 package com.example.eventmatch_pr.implementation;
 
 import com.example.eventmatch_pr.DB.DB;
-import com.example.eventmatch_pr.entity.User;
-import com.example.eventmatch_pr.entity.UserSession;
+import com.example.eventmatch_pr.User;
 import com.example.eventmatch_pr.entity.User_Profile;
-import javafx.fxml.Initializable;
 
 import java.sql.Date;
-import java.sql.PreparedStatement;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -46,7 +43,22 @@ public class impUser_profile implements IUser<User_Profile> {
     }
 
     @Override
+    public List<User> getAllUsers() {
+        return List.of();
+    }
+
+    @Override
+    public User getUserById(int id) {
+        return null;
+    }
+
+    @Override
     public User getConnection(String email, String password) {
         return null;
+    }
+
+    @Override
+    public List<User> getAll() {
+        return List.of();
     }
 }

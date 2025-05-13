@@ -22,6 +22,14 @@ public class User_Profile {
 
     }
 
+    public User_Profile(int profileId, int userId, String adresse, String ville, String pays, String codePostal, LocalDate dateNaissance, String bio) {
+
+
+
+
+
+    }
+
     // Getters et setters
     public String getAdresse() { return adresse; }
     public void setAdresse(String adresse) { this.adresse = adresse; }

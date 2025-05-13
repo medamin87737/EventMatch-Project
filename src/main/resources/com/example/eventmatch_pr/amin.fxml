@@ -1,173 +1,252 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import de.jensd.fx.glyphs.fontawesome.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.eventmatch_pr.HelloController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="618.0" prefWidth="863.0" style="-fx-background-color: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.eventmatch_pr.HelloController">
+
+   <!-- Left Sidebar - Enhanced -->
    <left>
-      <AnchorPane fx:id="bar" prefHeight="313.0" prefWidth="173.0" style="-fx-background-color: #243B55;" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="bar" prefHeight="494.0" prefWidth="222.0" style="-fx-background-color: linear-gradient(to bottom, #243B55, #141E30);" BorderPane.alignment="CENTER">
+         <effect>
+            <DropShadow color="rgba(0,0,0,0.4)" radius="10" spread="0.2" />
+         </effect>
          <children>
-            <JFXButton layoutX="8.0" layoutY="76.0" prefHeight="24.0" prefWidth="146.0" style="-fx-background-color: #F5F5F5;" text="EVENT" textFill="#243b55">
-               <font>
-                  <Font name="Cambria Bold Italic" size="15.0" />
-               </font>
-               <graphic>
-                  <FontAwesomeIcon fill="#243b55" glyphName="ARROW_LEFT" />
-               </graphic>
-            </JFXButton>
-            <JFXButton layoutX="8.0" layoutY="124.0" prefHeight="33.0" prefWidth="145.0" style="-fx-background-color: #F5F5F5;" text="PRESTATAIRE" textFill="#243b55">
-               <font>
-                  <Font name="Cambria Bold Italic" size="13.0" />
-               </font>
-               <graphic>
-                  <FontAwesomeIcon fill="#243b55" glyphName="ARROW_RIGHT" />
-               </graphic>
-            </JFXButton>
-            <JFXButton layoutX="8.0" layoutY="233.0" prefHeight="30.0" prefWidth="145.0" style="-fx-background-color: #F5F5F5;" text="AVIS" textFill="#243b55">
-               <font>
-                  <Font name="Cambria Bold Italic" size="15.0" />
-               </font>
-               <graphic>
-                  <FontAwesomeIcon fill="#243b55" glyphName="STAR" />
-               </graphic>
-            </JFXButton>
-            <JFXButton layoutX="8.0" layoutY="178.0" prefHeight="30.0" prefWidth="146.0" style="-fx-background-color: #F5F5F5;" text="RESERVATION" textFill="#243b55">
-               <font>
-                  <Font name="Cambria Bold Italic" size="12.0" />
-               </font>
-               <graphic>
-                  <FontAwesomeIcon fill="#243b55" glyphName="CHECK" />
-               </graphic>
-            </JFXButton>
-            <Button fx:id="Profile" layoutX="14.0" layoutY="32.0" mnemonicParsing="false" onAction="#ProfileOpen" prefHeight="29.0" prefWidth="133.0" text="Profile" textFill="#243b55">
-               <font>
-                  <Font name="Cambria Bold Italic" size="16.0" />
-               </font>
-               <graphic>
-                  <FontAwesomeIcon fill="#243b55" glyphName="USER" wrappingWidth="12.428571701049805" />
-               </graphic>
-            </Button>
-            <Button fx:id="ProfileClose" layoutX="14.0" layoutY="32.0" mnemonicParsing="false" onAction="#ProfileClose" prefHeight="29.0" prefWidth="133.0" text="Profile" textFill="#243b55">
-               <font>
-                  <Font name="Cambria Bold Italic" size="16.0" />
-               </font>
-               <graphic>
-                  <FontAwesomeIcon fill="#243b55" glyphName="USER" wrappingWidth="12.428571701049805" />
-               </graphic>
-            </Button>
+            <!-- App Logo -->
+            <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="20.0" spacing="5" />
+
+            <!-- Navigation Buttons -->
+            <VBox alignment="TOP_CENTER" layoutX="64.0" layoutY="118.0" prefHeight="220.0" prefWidth="94.0" spacing="15">
+               <Button fx:id="Profile" mnemonicParsing="false" onAction="#ProfileOpen" prefHeight="0.0" prefWidth="120.0" style="-fx-background-color: linear-gradient(to right, #36d1dc, #5b86e5); -fx-text-fill: white; -fx-background-radius: 5; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 1);" text="Profile">
+                  <font>
+                     <Font name="System Bold" size="14.0" />
+                  </font>
+                  <graphic>
+                     <FontAwesomeIcon fill="WHITE" glyphName="USER" size="16" />
+                  </graphic>
+               </Button>
+               <JFXButton onAction="#AddProfileAccount" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: linear-gradient(to right, #36d1dc, #5b86e5); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5; -fx-effect: dropshadow(gaussian, rgba(86,171,47,0.5), 5, 0, 0, 1);" text="ADD">
+                  <font>
+                     <Font name="System Bold" size="14.0" />
+                  </font>
+                  <graphic>
+                     <FontAwesomeIcon fill="WHITE" glyphName="PLUS" size="14" />
+                  </graphic>
+               </JFXButton>
+
+               <JFXButton onAction="#EditProfileAccount" prefHeight="30.0" prefWidth="115.0" style="-fx-background-color: linear-gradient(to right, #36d1dc, #5b86e5); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5; -fx-effect: dropshadow(gaussian, rgba(54,209,220,0.5), 5, 0, 0, 1);" text="EDIT">
+                  <font>
+                     <Font name="System Bold" size="14.0" />
+                  </font>
+                  <graphic>
+                     <FontAwesomeIcon fill="WHITE" glyphName="EDIT" size="14" />
+                  </graphic>
+               </JFXButton>
+
+               <JFXButton onAction="#DeleteProfileAccount" prefHeight="30.0" prefWidth="117.0" style="-fx-background-color: linear-gradient(to right, #36d1dc, #5b86e5); -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5; -fx-effect: dropshadow(gaussian, rgba(255,81,47,0.5), 5, 0, 0, 1);" text="DELETE">
+                  <font>
+                     <Font name="System Bold" size="14.0" />
+                  </font>
+                  <graphic>
+                     <FontAwesomeIcon fill="WHITE" glyphName="TIMES" size="14" />
+                  </graphic>
+               </JFXButton>
+
+               <Button fx:id="ProfileClose" mnemonicParsing="false" onAction="#ProfileClose" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: linear-gradient(to right, #4b6cb7, #182848); -fx-text-fill: white; -fx-background-radius: 5; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 1);" text="Profile" visible="false">
+                  <font>
+                     <Font name="System Bold" size="14.0" />
+                  </font>
+                  <graphic>
+                     <FontAwesomeIcon fill="WHITE" glyphName="USER" size="16" />
+                  </graphic>
+               </Button>
+            </VBox>
+            <FontAwesomeIcon fill="#4fc3f7" glyphName="CALENDAR_ALT" layoutX="81.0" layoutY="71.0" size="5em" wrappingWidth="60.42856979370117" />
          </children>
       </AnchorPane>
    </left>
-   <bottom>
-      <AnchorPane prefHeight="44.0" prefWidth="600.0" style="-fx-background-color: #243B55;" BorderPane.alignment="CENTER">
-         <children>
-            <Text fill="WHITE" layoutX="26.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CONTATCT US : +21623456765">
-               <font>
-                  <Font size="9.0" />
-               </font>
-            </Text>
-            <Line endX="-42.5" endY="22.5" layoutX="216.0" layoutY="17.0" startX="-42.5" startY="-14.0" stroke="WHITE" />
-            <FontAwesomeIcon fill="WHITE" glyphName="FACEBOOK" layoutX="202.0" layoutY="26.0" />
-            <Text fill="WHITE" layoutX="215.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EVENT_Match_Team" />
-            <FontAwesomeIcon fill="WHITE" glyphName="INSTAGRAM" layoutX="345.0" layoutY="26.0" />
-            <Text fill="WHITE" layoutX="362.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="EVENT_Match_Infinity" />
-            <FontAwesomeIcon fill="WHITE" glyphName="WHATSAPP" layoutX="497.0" layoutY="25.0" text="" />
-            <Text fill="WHITE" layoutX="514.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="23746575" />
-            <FontAwesomeIcon fill="WHITE" glyphName="PHONE" layoutX="9.0" layoutY="25.0" />
-            <Line endX="-42.5" endY="22.5" layoutX="375.0" layoutY="21.0" startX="-42.5" startY="-14.0" stroke="WHITE" />
-            <Line endX="-42.5" endY="22.5" layoutX="530.0" layoutY="21.0" startX="-42.5" startY="-14.0" stroke="WHITE" />
-         </children>
-      </AnchorPane>
-   </bottom>
+
+   <!-- Top Bar - Enhanced -->
    <top>
-      <AnchorPane prefHeight="36.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="70.0" prefWidth="942.0" style="-fx-background-color: rgba(36, 59, 85, 0.7); -fx-border-color: rgba(200,230,255,0.2); -fx-border-width: 0 0 1 0;">
+         <effect>
+            <DropShadow color="rgba(0,0,0,0.3)" radius="10" spread="0.2" />
+         </effect>
          <children>
-            <Label layoutX="8.0" layoutY="2.0" prefHeight="39.0" prefWidth="165.0" text="you are Welcome " textOverrun="CENTER_WORD_ELLIPSIS" underline="true" wrapText="true">
+            <!-- Welcome Message -->
+            <Label layoutX="336.0" layoutY="19.0" prefHeight="30.0" prefWidth="237.0" style="-fx-text-fill: #c2e9fb; -fx-font-weight: bold;" text="Welcome to EventMatch">
                <font>
-                  <Font name="Algerian" size="18.0" />
+                  <Font name="System Bold" size="20.0" />
                </font>
-               <textFill>
-                  <LinearGradient endX="1.0" endY="1.0" startX="0.8436018957345972">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color red="0.13333334028720856" green="0.3529411852359772" blue="0.6313725709915161" />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="1.0" green="1.0" blue="1.0" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </LinearGradient>
-               </textFill>
+
             </Label>
-            <Line endY="27.0" layoutX="174.0" layoutY="12.0" startY="-12.0" />
-            <Line endX="427.0" endY="-1.0" layoutX="174.0" layoutY="42.0" startX="-1.0" startY="-1.0" />
-            <Line endX="585.2929077148438" endY="-6.0" layoutX="10.0" layoutY="6.0" startX="-10.0" startY="-6.0" />
-            <Button fx:id="sort" layoutX="551.0" layoutY="7.0" mnemonicParsing="false" onAction="#ClosePage" prefHeight="25.0" prefWidth="45.0">
+
+            <!-- Action Buttons -->
+            <HBox alignment="CENTER_RIGHT" layoutX="42.0" layoutY="15.0" prefHeight="40.0" prefWidth="122.0" spacing="15">
+
+               <Button fx:id="MenuClose" mnemonicParsing="false" onAction="#CloseMenu" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: rgba(75,108,183,0.7); -fx-text-fill: white; -fx-background-radius: 5; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 1);" text="Close Menu" visible="false">
+                  <graphic>
+                     <FontAwesomeIcon fill="WHITE" glyphName="BARS" />
+                  </graphic>
+               </Button>
+            </HBox>
+
+            <Button fx:id="sort" layoutX="825.0" layoutY="5.0" mnemonicParsing="false" onAction="#ClosePage" prefHeight="11.0" prefWidth="25.0" style="-fx-background-color: transparent; -fx-background-radius: 20;">
                <graphic>
-                  <FontAwesomeIcon fill="#da2e10" glyphName="CLOSE" />
+                  <FontAwesomeIcon fill="WHITE" glyphName="CLOSE" size="1.5em" text="" />
                </graphic>
             </Button>
-            <Button fx:id="Menu" layoutX="216.0" layoutY="9.0" mnemonicParsing="false" onAction="#OpenMenu" prefHeight="25.0" prefWidth="115.0" text="Open Menu">
+            <Button fx:id="Menu" layoutX="42.0" layoutY="15.0" mnemonicParsing="false" onAction="#OpenMenu" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: rgba(75,108,183,0.7); -fx-text-fill: white; -fx-background-radius: 5; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 1);" text="Open Menu">
                <graphic>
-                  <FontAwesomeIcon fill="#243b55" glyphName="BARS" />
+                  <FontAwesomeIcon fill="WHITE" glyphName="BARS" />
                </graphic>
             </Button>
-            <Button fx:id="MenuClose" layoutX="370.0" layoutY="9.0" mnemonicParsing="false" onAction="#CloseMenu" prefHeight="25.0" prefWidth="104.0" text="Close Menu">
-               <graphic>
-                  <FontAwesomeIcon fill="#243b55" glyphName="BARS" />
-               </graphic>
-            </Button>
+            <ImageView fitHeight="57.0" fitWidth="63.0" layoutX="272.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@download__2_-removebg-preview%20(1).png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="WAIT" />
+               </cursor>
+            </ImageView>
          </children>
       </AnchorPane>
    </top>
    <center>
-      <AnchorPane fx:id="ProfileBar" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="626.0" prefWidth="664.0" BorderPane.alignment="CENTER">
          <children>
-            <TextField fx:id="biotxt" layoutX="74.0" layoutY="190.0" prefHeight="107.0" prefWidth="253.0" />
-            <TextField fx:id="postaltxt" layoutX="206.0" layoutY="98.0" />
-            <TextField fx:id="paystxt" layoutX="206.0" layoutY="49.0" />
-            <TextField fx:id="addresstxt" layoutX="14.0" layoutY="49.0" />
-            <TextField fx:id="villetxt" layoutX="14.0" layoutY="98.0" />
-            <Text layoutX="67.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ADRESS" />
-            <Text layoutX="74.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VILLE" />
-            <Text layoutX="253.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PAYS" />
-            <Text layoutX="239.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POSTAL_CODE" />
-            <DatePicker fx:id="pickerdate" layoutX="119.0" layoutY="144.0" />
-            <JFXButton layoutX="339.0" layoutY="269.0" onAction="#DeleteProfileAccount" prefHeight="28.0" prefWidth="72.0" style="-fx-background-color: ff1c07;" text="DELETE" textFill="WHITE">
-               <font>
-                  <Font name="Cambria Bold Italic" size="12.0" />
-               </font>
-               <graphic>
-                  <FontAwesomeIcon fill="WHITE" glyphName="TIMES" />
-               </graphic>
-            </JFXButton>
-            <JFXButton layoutX="339.0" layoutY="229.0" onAction="#EditProfileAccount" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: #228af2;" text="EDIT" textFill="WHITE">
-               <font>
-                  <Font name="Cambria Bold Italic" size="15.0" />
-               </font>
-               <graphic>
-                  <FontAwesomeIcon fill="WHITE" glyphName="EDIT" />
-               </graphic>
-            </JFXButton>
-            <Text layoutX="32.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BIO" />
-            <Text layoutX="26.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DATE OF BIRTH" />
-            <JFXButton layoutX="339.0" layoutY="190.0" onAction="#AddProfileAccount" prefHeight="27.0" prefWidth="72.0" style="-fx-background-color: #32d34d;" text="ADD" textFill="WHITE">
-               <font>
-                  <Font name="Cambria Bold Italic" size="15.0" />
-               </font>
-               <graphic>
-                  <FontAwesomeIcon fill="WHITE" glyphName="PLUS" />
-               </graphic>
-            </JFXButton>
+            <AnchorPane layoutX="1.0" layoutY="2.0" prefHeight="550.0" prefWidth="558.0" />
+            <AnchorPane fx:id="setslideraccount" layoutX="24.0" layoutY="41.0" prefHeight="585.0" prefWidth="646.0" style="-fx-background-color: linear-gradient(to bottom, #0f2027, #203a43, #2c5364); -fx-background-radius: 15; -fx-padding: 30; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 15, 0, 0, 5);">
+               <effect>
+                  <InnerShadow color="rgba(0,0,0,0.3)" radius="8" />
+               </effect>
+               <children>
+                  <Label layoutX="40.0" layoutY="40.0" style="-fx-text-fill: #a1c4fd; -fx-font-weight: bold;" text="Edit Your Account">
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                  </Label>
+                  <GridPane hgap="25" layoutX="40.0" layoutY="80.0" vgap="25">
+                     <columnConstraints>
+                        <ColumnConstraints prefWidth="180.0" />
+                        <ColumnConstraints prefWidth="350.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints prefHeight="55" />
+                        <RowConstraints prefHeight="55" />
+                        <RowConstraints prefHeight="55" />
+                        <RowConstraints prefHeight="55" />
+                     </rowConstraints>
+                     <children>
+                        <Label style="-fx-text-fill: #a1c4fd; -fx-font-weight: bold; -fx-font-size: 14px;" text="Name" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <TextField fx:id="nomSettingTxt" promptText="Votre Nom" style="-fx-background-color: rgba(33, 33, 33, 0.8); -fx-text-fill: white; -fx-prompt-text-fill: #7f8c8d; -fx-border-radius: 6; -fx-background-radius: 6; -fx-border-color: #4fc3f7; -fx-border-width: 0 0 2 0;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <Label style="-fx-text-fill: #a1c4fd; -fx-font-weight: bold; -fx-font-size: 14px;" text="Family Name" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <TextField fx:id="prenomSettingTxt" promptText="Votre Prénom" style="-fx-background-color: rgba(33, 33, 33, 0.8); -fx-text-fill: white; -fx-prompt-text-fill: #7f8c8d; -fx-border-radius: 6; -fx-background-radius: 6; -fx-border-color: #4fc3f7; -fx-border-width: 0 0 2 0;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label style="-fx-text-fill: #a1c4fd; -fx-font-weight: bold; -fx-font-size: 14px;" text="Email" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <TextField fx:id="emailSettingTxt" promptText="Votre Email" style="-fx-background-color: rgba(33, 33, 33, 0.8); -fx-text-fill: white; -fx-prompt-text-fill: #7f8c8d; -fx-border-radius: 6; -fx-background-radius: 6; -fx-border-color: #4fc3f7; -fx-border-width: 0 0 2 0;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label style="-fx-text-fill: #a1c4fd; -fx-font-weight: bold; -fx-font-size: 14px;" text="Phone" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <TextField fx:id="telSettingTxt" promptText="Votre Téléphone" style="-fx-background-color: rgba(33, 33, 33, 0.8); -fx-text-fill: white; -fx-prompt-text-fill: #7f8c8d; -fx-border-radius: 6; -fx-background-radius: 6; -fx-border-color: #4fc3f7; -fx-border-width: 0 0 2 0;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <AnchorPane fx:id="ProfileBar" prefHeight="614.0" prefWidth="723.0" />
+                     </children>
+                  </GridPane>
+                  <HBox alignment="CENTER_RIGHT" layoutX="40.0" layoutY="480.0" spacing="25">
+                     <children>
+                        <Button onAction="#saveProfile" prefHeight="0.0" prefWidth="88.0" style="-fx-background-color: linear-gradient(to right, #36d1dc, #5b86e5); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(86,171,47,0.5), 8, 0, 0, 2);" text="Save">
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="SAVE" />
+                           </graphic>
+                        </Button>
+                        <Button onAction="#viewuser" prefHeight="35.0" prefWidth="85.0" style="-fx-background-color: linear-gradient(to right, #36d1dc, #5b86e5); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(255,81,47,0.5), 8, 0, 0, 2);" text="BACK">
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="ARROW_LEFT" />
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Button layoutX="502.0" layoutY="43.0" onAction="#handleLogout" prefHeight="12.0" prefWidth="93.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(255,81,47,0.5), 8, 0, 0, 2);" text="Logout">
+                     <graphic>
+                        <FontAwesomeIcon fill="WHITE" glyphName="LOCK" />
+                     </graphic>
+                  </Button>
+                  <FontAwesomeIcon fill="#4fc3f7" glyphName="CALENDAR_ALT" layoutX="284.0" layoutY="72.0" size="3em" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="ProfileBar" layoutX="23.0" layoutY="41.0" prefHeight="545.0" prefWidth="639.0" style="-fx-background-color: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);">
+               <effect>
+                  <InnerShadow color="rgba(0,0,0,0.2)" radius="5" />
+               </effect>
+               <children>
+                  <Label layoutX="30.0" layoutY="20.0" style="-fx-text-fill: #a1c4fd; -fx-font-weight: bold;" text="Profile Information">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <GridPane hgap="20" layoutX="30.0" layoutY="60.0" prefHeight="454.0" prefWidth="470.0" vgap="15">
+                     <columnConstraints>
+                        <ColumnConstraints prefWidth="150" />
+                        <ColumnConstraints prefWidth="300" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints prefHeight="45.0" />
+                        <RowConstraints prefHeight="45.0" />
+                        <RowConstraints prefHeight="45.0" />
+                        <RowConstraints prefHeight="45.0" />
+                        <RowConstraints prefHeight="45.0" />
+                        <RowConstraints prefHeight="45.0" />
+                        <RowConstraints prefHeight="120.0" />
+                     </rowConstraints>
+                     <children>
+                        <Label style="-fx-text-fill: #a1c4fd; -fx-font-weight: bold;" text="Address:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <TextField fx:id="addresstxt" promptText="Enter your address" style="-fx-background-color: rgba(33, 33, 33, 0.8); -fx-text-fill: white; -fx-prompt-text-fill: #7f8c8d; -fx-border-radius: 5; -fx-background-radius: 5; -fx-border-color: #4fc3f7; -fx-border-width: 0 0 2 0;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <Label style="-fx-text-fill: #a1c4fd; -fx-font-weight: bold;" text="City:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <TextField fx:id="villetxt" promptText="Enter your city" style="-fx-background-color: rgba(33, 33, 33, 0.8); -fx-text-fill: white; -fx-prompt-text-fill: #7f8c8d; -fx-border-radius: 5; -fx-background-radius: 5; -fx-border-color: #4fc3f7; -fx-border-width: 0 0 2 0;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label style="-fx-text-fill: #a1c4fd; -fx-font-weight: bold;" text="Country:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <TextField fx:id="paystxt" promptText="Enter your country" style="-fx-background-color: rgba(33, 33, 33, 0.8); -fx-text-fill: white; -fx-prompt-text-fill: #7f8c8d; -fx-border-radius: 5; -fx-background-radius: 5; -fx-border-color: #4fc3f7; -fx-border-width: 0 0 2 0;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label style="-fx-text-fill: #a1c4fd; -fx-font-weight: bold;" text="Postal Code:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <TextField fx:id="postaltxt" promptText="Enter postal code" style="-fx-background-color: rgba(33, 33, 33, 0.8); -fx-text-fill: white; -fx-prompt-text-fill: #7f8c8d; -fx-border-radius: 5; -fx-background-radius: 5; -fx-border-color: #4fc3f7; -fx-border-width: 0 0 2 0;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label style="-fx-text-fill: #a1c4fd; -fx-font-weight: bold;" text="Date of Birth:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                        <DatePicker fx:id="pickerdate" style="-fx-background-color: rgba(33, 33, 33, 0.8); -fx-text-fill: white; -fx-border-radius: 5; -fx-background-radius: 5; -fx-border-color: #4fc3f7;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label style="-fx-text-fill: #a1c4fd; -fx-font-weight: bold;" text="Bio:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                        <TextField fx:id="biotxt" prefHeight="100" promptText="Tell us about yourself..." style="-fx-background-color: rgba(33, 33, 33, 0.8); -fx-text-fill: white; -fx-prompt-text-fill: #7f8c8d; -fx-border-radius: 5; -fx-background-radius: 5; -fx-border-color: #4fc3f7; -fx-border-width: 0 0 2 0;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <JFXButton onAction="#handleLogout" prefHeight="6.0" prefWidth="103.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5; -fx-effect: dropshadow(gaussian, rgba(255,81,47,0.5), 5, 0, 0, 1);" text="Logout" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="SIGN_OUT" size="14" />
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton onAction="#viewuser" prefHeight="0.0" prefWidth="66.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5; -fx-effect: dropshadow(gaussian, rgba(54,209,220,0.5), 5, 0, 0, 1);" text="Back" GridPane.rowIndex="6">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="ARROW_LEFT" size="14" />
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </GridPane>
+                  <HBox alignment="CENTER_RIGHT" layoutX="500.0" layoutY="400.0" spacing="15" />
+                  <FontAwesomeIcon fill="#4fc3f7" glyphName="CALENDAR_ALT" layoutX="265.0" layoutY="50.0" size="3em" />
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
    </center>

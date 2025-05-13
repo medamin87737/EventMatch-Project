@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<GridPane hgap="10" vgap="10" style="-fx-padding: 20;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.eventmatch_pr.ReservationSalleController">
+    <Label text="ID Salle:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+    <TextField fx:id="txtIdSalle" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+    <Label text="ID Utilisateur:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+    <TextField fx:id="txtIdUtilisateur" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+    <Label text="Date Début:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+    <DatePicker fx:id="dpDateDebut" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    <TextField fx:id="txtHeureDebut" promptText="HH:mm" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+
+    <Label text="Date Fin:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+    <DatePicker fx:id="dpDateFin" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+    <TextField fx:id="txtHeureFin" promptText="HH:mm" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+
+    <Label text="Statut:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+    <ComboBox fx:id="cbStatut" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+    <Label text="Motif:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+    <TextField fx:id="txtMotif" GridPane.columnIndex="1" GridPane.rowIndex="5" GridPane.columnSpan="2" />
+
+    <Label text="Statut Paiement:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+    <ComboBox fx:id="cbStatutPaiement" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+    <Label text="Nombre Participants:" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+    <TextField fx:id="txtNombreParticipants" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+
+    <Label text="Statut Réservation:" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+    <TextField fx:id="txtStatutReservation" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+
+    <Label text="Commentaires:" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+    <TextArea fx:id="taCommentaires" GridPane.columnIndex="1" GridPane.rowIndex="9" GridPane.columnSpan="2" GridPane.rowSpan="2" />
+
+    <HBox spacing="10" alignment="CENTER_RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="11" GridPane.columnSpan="2">
+        <Button onAction="#handleSaveReservation" style="-fx-background-color: #2ecc71; -fx-text-fill: white;" text="Enregistrer" />
+        <Button onAction="#handleCancel" style="-fx-background-color: #e74c3c; -fx-text-fill: white;" text="Annuler" />
+    </HBox>
+</GridPane>

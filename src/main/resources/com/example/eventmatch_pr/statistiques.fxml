@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="stat" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.eventmatch_pr.HelloController">
+    <!-- Header -->
+    <top>
+        <HBox alignment="CENTER" style="-fx-background-color: linear-gradient(to right, #43cea2, #185a9d); -fx-padding: 15;">
+            <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #ecf0f1;">
+                <graphic>
+                    <FontAwesomeIcon glyphName="LINE_CHART" size="28" style="-fx-fill: #e74c3c;" />
+                </graphic>
+                <text> EventMatch : Statistiques des inscriptions </text>
+            </Label>
+         <Button fx:id="logoutBtn" alignment="CENTER_RIGHT" onAction="#handleLogout" prefHeight="33.0" prefWidth="74.0" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-cursor: hand; -fx-font-family: 'Segoe UI Semibold';" text="Logout">
+            <graphic>
+               <FontAwesomeIcon fill="white" glyphName="SIGN_OUT" size="16" />
+            </graphic>
+         </Button>
+        </HBox>
+    </top>
+
+    <!-- Graph Section -->
+    <center>
+        <StackPane style="-fx-padding: 20; -fx-background-color: linear-gradient(to right, #43cea2, #185a9d);">
+            <LineChart fx:id="lineChart" animated="true" createSymbols="false" style="-fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 15, 0.5, 0, 2);" title="Évolution des inscriptions">
+                <xAxis>
+                    <CategoryAxis label="Date" style="-fx-tick-label-fill: #ecf0f1; -fx-axis-label-fill: #ecf0f1;" />
+                </xAxis>
+                <yAxis>
+                    <NumberAxis label="Nombre d'inscriptions" style="-fx-tick-label-fill: #ecf0f1; -fx-axis-label-fill: #ecf0f1;" />
+                </yAxis>
+            </LineChart>
+         <ImageView fitHeight="150.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true" />
+         <ImageView fitHeight="150.0" fitWidth="388.0" pickOnBounds="true" preserveRatio="true" />
+         <ImageView fitHeight="150.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true" />
+        </StackPane>
+    </center>
+
+    <!-- Footer -->
+    <bottom>
+        <HBox alignment="CENTER" prefHeight="16.0" prefWidth="540.0" style="-fx-background-color: linear-gradient(to right, #43cea2, #185a9d); -fx-padding: 10;">
+         <ImageView fitHeight="41.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@download__2_-removebg-preview%20(1)cp.png" />
+            </image>
+         </ImageView>
+            <Label style="-fx-font-size: 12px; -fx-text-fill: #bdc3c7;" text="© 2025 EventMatch | Tous droits réservés" />
+         <Button onAction="#handleBackprofileHome" prefHeight="32.0" prefWidth="10.0" style="-fx-background-color: linear-gradient(to right, #2c3e50, #34495e); -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0, 0, 2);">
+            <graphic>
+               <FontAwesomeIcon fill="WHITE" glyphName="ARROW_LEFT" />
+            </graphic>
+            <font>
+               <Font size="9.0" />
+            </font>
+         </Button>
+        </HBox>
+    </bottom>
+</BorderPane>
